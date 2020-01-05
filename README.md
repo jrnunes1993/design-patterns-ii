@@ -7,7 +7,7 @@ Quando precisamos isolar o processo de criação de um objeto, para facilitar a 
 <details>
 <summary>Exemplo em PHP.</summary>
 
-```
+``` php
 class ConnectionFactory {
 
 	public function getConnection() {
@@ -22,7 +22,6 @@ class ConnectionFactory {
 
 }
 ```
-{: .language-php}
 
 </details>
 
