@@ -22,6 +22,7 @@ class ConnectionFactory {
 
 }
 ```
+</details>
 
 Mais informações em: https://refactoring.guru/design-patterns/factory-method
 
@@ -29,7 +30,8 @@ Mais informações em: https://refactoring.guru/design-patterns/factory-method
 
 Quando precisamos salvar o histórico de estados de um objeto para restaura-lo depois caso necessário, utilizamos o pattern chamado Memento.
 
-Exemplo de utilização do Memento
+<details>
+<summary>Exemplo de utilização do Memento</summary>
 
 ``` php
 
