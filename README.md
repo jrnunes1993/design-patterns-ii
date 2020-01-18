@@ -39,7 +39,7 @@ Quando precisamos salvar o histórico de estados de um objeto para restaura-lo d
 
 ```
 
-Mais informações em: https://refactoring.guru/design-patterns/memento
-
 </details>
+
+Mais informações em: https://refactoring.guru/design-patterns/memento
 
