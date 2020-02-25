@@ -1,14 +1,10 @@
 <?php
-error_reporting(0);
+	//error_reporting(0);
 
-require "ConnectionFactory.php";
+	require "ConnectionFactory.php";
+	
+	$factory = new ConnectionFactory();
 
-$factory = new ConnectionFactory();
-$con = $factory->getConnection();
+	$conexao = $factory->getConnection();
 
-
-$select = "select * from cursos";
-
-var_dump($con)
-
-?>
+	var_dump($conexao);

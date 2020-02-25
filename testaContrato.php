@@ -1,26 +1,27 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
+	date_default_timezone_set("Brazil/East");
+	function carregaClasse($nomeClasse){
+			require $nomeClasse.".php";
+	}
+	spl_autoload_register("carregaClasse");
 
-function carregaClasse ($nomeClasse) {
-	require $nomeClasse.".php";
-}
+	$historico = new Historico();
+	$contrato = new Contrato("Caelum", date("Y-m-d"));
 
-spl_autoload_register("carregaClasse");
+	echo "<pre>";
+	var_dump($contrato);
 
-$historico = new Historico();
-$contrato = new Contrato("Alura", date("Y-m-d"));
-echo "<pre>";
-var_dump($contrato);
-echo "<br>";
-$historico->addEstado($contrato->salvaEstado());
-$contrato->avanca();
-echo "<pre>";
-var_dump($contrato);
-$historico->addEstado($contrato->salvaEstado());
-$contrato->avanca();
-echo "<pre>";
-var_dump($contrato);
-echo "<pre>";
-$contratoAntigo = $historico->getEstado(1);
-var_dump($contratoAntigo);
+	$historico->addEstado($contrato->salvaEstado());
+	$contrato->avanca();
+
+	var_dump($contrato);
+
+	$historico->addEstado($contrato->salvaEstado());
+	$contrato->avanca();
+
+	var_dump($contrato);
+	$contratoAntigo = $historico->restaura(0);
+	var_dump($contratoAntigo);
+
+	$contratoAntigo = $historico->restaura(1);
+	var_dump($contratoAntigo);

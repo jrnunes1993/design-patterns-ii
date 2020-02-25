@@ -1,22 +1,16 @@
 <?php
+	class Historico {
+		private $estadoContrato;
 
-class Historico{
-    private $estadosContrato;
+		function __construct() {
+			$this->estadoContrato = array();
+		}
 
-    function __construct()
-    {
-        $this->estadosContrato = array();
-    }
+		public function restaura($index) {
+			return $this->estadoContrato[$index];
+		}
 
-    public function getEstado($index)
-    {
-        return $this->estadosContrato[$index];
-    }
-
-    public function addEstado(Estado $estado)
-    {
-        $this->estadosContrato[] = $estado;
-    }
-}
-
-?>
+		public function addEstado(Estado $estado) {
+			$this->estadoContrato[] = $estado;
+		}
+	}

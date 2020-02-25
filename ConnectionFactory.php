@@ -1,17 +1,18 @@
 <?php
+	class ConnectionFactory {
+		public function getConnection() {
 
-class ConnectionFactory {
+            $conexao = false;
 
-	public function getConnection() {
-		$host = "localhost";
-		$user = "";
-		$password = "";
-		$database = "";
+            $tipoBanco = parse_ini_file('config.php');
+                        $tipoBanco = $tipoBanco['tipoBanco'];
 
-		$con = mysqli_connect($host,$user,$password,$database);
-		return $con;
-	}
-
+                        if($tipoBanco == "mysql") {
+                                $conexao = mysqli_connect("meuHost","meuUsuario","minhaSenha","meuBanco");
+                        }else if($tipoBanco == "postgree") {
+                                $conexao = pg_connect("host=meuHost port=5432 dbname=meuBanco user=meuUsuario password=meuBanco");
+                        }
+                        
+            return $conexao;
+    }
 }
-
-?>

@@ -1,5 +1,4 @@
 <?php
-
-interface TipoDeContrato {
-	public function avanca(Contrato $Contrato);
-}
+	interface TipoDeContrato {
+		public function avanca(Contrato $contrato);
+	}

@@ -1,20 +1,15 @@
 <?php
+	class Estado {
 
+		private $contrato;
+		private $horaGerada;
 
-class Estado {
-    private $contrato;
-    private $horaGerada;
+		function __construct(Contrato $contrato){
+			$this->contrato = $contrato;
+			$this->horaGerada = date("h:i:s");
+		}
 
-    function __construct(Contrato $contrato)
-    {
-        $this->contrato = $contrato;
-        $this->horaGerada = date("h:i:s");
-    }
-
-    public function getContrato()
-    {
-        return $this->contrato;
-    }
-
-
-}
+		public function getContrato() {
+			return $this->contrato;
+		}
+	}
